@@ -17,8 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/signup" do
-    #your code here
-
+    @user = User.find(params[id], {name: params[:name], password_digest: params[:password]})
   end
 
   get '/account' do
